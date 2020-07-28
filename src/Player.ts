@@ -27,7 +27,7 @@ class Player {
       "2",
     ];
     if (options && options.filters && Array.isArray(options.filters)) {
-      FFmpeg = FFmpeg.concat(options.filter);
+      FFmpeg = FFmpeg.concat(options.filters);
     }
     const transcoder = new prism.FFmpeg({
       args: FFmpeg,
@@ -42,7 +42,8 @@ class Player {
       transcoder.destroy();
       opus.destroy();
     });
-    connection.play(out);
+    connection.play(out,
+      {type:"opus"});
     return connection;
   }
 }

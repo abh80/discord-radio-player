@@ -32,7 +32,17 @@ export default class {
       "2",
     ];
     if (options && options.filters && Array.isArray(options.filters)) {
-      FFmpeg = FFmpeg.concat(options.filter);
+      FFmpeg = FFmpeg.concat(options.filters);
+    }
+    if(options && options.filters && options.bassboost&&!isNaN(options.bassboost)){
+      let bass = options.bassboost
+      let bassSetting = ["-af",`bass=g=${bass}`]
+      if(options.normalizer)bassSetting = ["-af",`bass=g=${bass},dynaudnorm=f=200`]
+      FFmpeg = FFmpeg.concat(bassSetting)
+    }
+    if(options && options['8d']){
+    let setting = ["-af","apulsator=hz=0.08"]
+    FFmpeg = FFmpeg.concat(setting)
     }
     const transcoder = new prism.FFmpeg({
       args: FFmpeg,
