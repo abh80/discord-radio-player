@@ -1,0 +1,17 @@
+{
+  "name": "discord-radio-player",
+  "version": "1.0.0",
+  "description": "A easy to radio player for discord which supports over 25k radios over the world.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abh80",
+  "license": "MIT",
+  "dependencies": {
+    "@types/ws": "^7.2.6",
+    "discord.js": "^12.2.0",
+    "prism-media": "^1.2.2",
+    "radio-browser": "^2.1.2"
+  }
+}
