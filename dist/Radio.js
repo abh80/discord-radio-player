@@ -21,7 +21,7 @@ class default_1 {
             throw e;
         }
     }
-    static async getStream(streamURL, options) {
+    static getStream(streamURL, options) {
         if (!streamURL)
             throw new Error("(discord-radio-player) No stream link was provided");
         let FFmpeg = [
