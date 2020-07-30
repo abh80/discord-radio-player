@@ -1,6 +1,6 @@
 {
   "name": "discord-radio-player",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "An easy to radio player for discord which supports over 25k radios over the world.With custom ffmpeg filters support!",
   "main": "dist/index.js",
   "types":"dist/index.d.ts",

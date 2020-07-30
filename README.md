@@ -12,12 +12,12 @@ npm i @discordjs/opus ffmpeg-static
 # Searching Radio
 ```js
 const radio = require('discord-radio-player')
-const search = await radio.Radio.search({serchterm:'kissfm',limit:1,by:'name'}) //returns radio results by name
+const search = await radio.Radio.search({searchterm:'kissfm',limit:1,by:'name'}) //returns radio results by name
 ```
 # Playing Radio from search results
 ```js
 const radio = require('discord-radio-player')
-const search = await radio.Radio.search({serchterm:'kissfm',limit:1})
+const search = await radio.Radio.search({searchterm:'kissfm',limit:1})
 let streamUrl = search[0].url_resolved
 let stream = radio.Radio.getStream(streamUrl)
 message.member.voice.channel.join().then(c=>c.play(stream,{type:'opus'}))
@@ -27,7 +27,7 @@ message.member.voice.channel.join().then(c=>c.play(stream,{type:'opus'}))
 This is an example for enabling bassboost filter
 ```js
 const radio = require('discord-radio-player')
-const search = await radio.Radio.search({serchterm:'kissfm',limit:1})
+const search = await radio.Radio.search({searchterm:'kissfm',limit:1})
 let streamUrl = search[0].url_resolved
 // loading filters
 let FFmpegfilters = [
@@ -45,7 +45,7 @@ let stream = radio.Radio.getStream(streamUrl,{volume:2}) // 1 is default volume 
 - Bassboost
 ```js
 const radio = require('discord-radio-player')
-const search = await radio.Radio.search({serchterm:'kissfm',limit:1})
+const search = await radio.Radio.search({searchterm:'kissfm',limit:1})
 let streamUrl = search[0].url_resolved
 // Adding bassboost effect
 let stream = radio.Radio.getStream(streamUrl,{bassboost:30}) //sets the bassboost to 30DB
