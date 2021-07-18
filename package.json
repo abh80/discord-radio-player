@@ -17,6 +17,6 @@
     "@types/ws": "^7.2.6",
     "discord.js": "^12.2.0",
     "prism-media": "^1.2.2",
-    "radio-browser": "^2.1.2"
+    "radio-browser": "^2.1.7"
   }
 }
